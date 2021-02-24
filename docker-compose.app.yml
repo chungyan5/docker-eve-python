@@ -3,22 +3,29 @@
 
 version: '3.6'
 services:
-    web:
+    restapi:
         #image: aleksxp/docker-eve-python
         build:
             context: ${PROJ_PATH}/apps/eve/
             dockerfile: Dockerfile
-        ports:
-            - "5000:5000"
+        #ports:
+        #    - "5000:5000"
         volumes:
-            - ${PROJ_PATH}/apps/zzthis/app:/usr/src/app
+        #    - ${PROJ_PATH}/apps/zzthis/app:/usr/src/app
+             - eve_code:/usr/src/app
         depends_on:
             - mongo
-        command: python ./app.py
-
+        #command: python ./app.py
+        networks:
+            - db_restapi
     mongo:
         image: mongo
         volumes:
             - db:/data/db
+        networks:
+            - db_restapi
 volumes:
     db:
+    eve_code:
+networks:
+    db_restapi:

@@ -20,5 +20,7 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./app/* ./
+COPY ./app.ini /usr/local/etc/
 
-CMD ["python", "./app/app.py"]
+#CMD ["python", "./app/app.py"]
+CMD [ "uwsgi", "--ini", "/usr/local/etc/app.ini" ]
