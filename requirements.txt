@@ -1,8 +1,12 @@
+bcrypt==3.2.0
 cachetools==4.2.1
 Cerberus==1.3.2
 certifi==2020.12.5
+cffi==1.14.5
 chardet==4.0.0
 click==7.1.2
+cryptography==3.4.6
+docker==4.4.4
 Eve==1.1.4
 Events==0.3
 Flask==1.1.2
@@ -19,10 +23,13 @@ itsdangerous==1.1.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
 packaging==20.9
+paramiko==2.7.2
 protobuf==3.15.6
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
+pycparser==2.20
 pymongo==3.11.3
+PyNaCl==1.4.0
 pyparsing==2.4.7
 pytz==2021.1
 pywatchman==1.4.1
@@ -33,4 +40,5 @@ six==1.15.0
 uritemplate==3.0.1
 urllib3==1.26.4
 uWSGI==2.0.19.1
+websocket-client==0.58.0
 Werkzeug==1.0.1
