@@ -19,7 +19,7 @@ services:
         networks:
             - db_restapi
     mongo:
-        image: mongo
+        image: mongo:4.2.16
         volumes:
             - db:/data/db
         networks:
