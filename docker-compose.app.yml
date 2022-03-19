@@ -3,7 +3,7 @@
 
 version: '3.6'
 services:
-    restapi:
+    eve:
         #image: aleksxp/docker-eve-python
         build:
             context: ${PROJ_PATH}/apps/eve/
@@ -12,20 +12,15 @@ services:
         #    - "5000:5000"
         volumes:
         #    - ${PROJ_PATH}/apps/zzthis/app:/usr/src/app
-             - eve_code:/usr/src/app
+             - eve_code:/app
         depends_on:
             - mongo
         #command: python ./app.py
         networks:
-            - db_restapi
-    mongo:
-        image: mongo:4.2.16
-        volumes:
-            - db:/data/db
-        networks:
-            - db_restapi
-volumes:
-    db:
-    eve_code:
+            - backend_net
 networks:
-    db_restapi:
+    backend_net:
+
+# placed at last position of this doc., for easy to script to add external volume; With line 27 as empty
+volumes:
+  eve_code:
